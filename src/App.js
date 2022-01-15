@@ -3,6 +3,7 @@ import Navbar from "./components/navbar";
 import Planets from "./components/planets";
 import People from "./components/people";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ function App() {
           {page === "planets" ? <Planets /> : <People />}
         </div>
       </div>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
